@@ -3,6 +3,7 @@
  */
 package hu.simplexion.z2.sensible.kotlin
 
+import hu.simplexion.z2.sensible.kotlin.fir.SensiblePluginRegistrar
 import hu.simplexion.z2.sensible.kotlin.ir.generators.SensibleGenerator
 import hu.simplexion.z2.sensible.kotlin.ir.plugin.SensibleConfigurationKeys.ANNOTATION
 import hu.simplexion.z2.sensible.kotlin.ir.plugin.SensibleConfigurationKeys.DUMP

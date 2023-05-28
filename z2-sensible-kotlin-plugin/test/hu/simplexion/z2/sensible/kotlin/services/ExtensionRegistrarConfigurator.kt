@@ -1,7 +1,7 @@
 package hu.simplexion.z2.sensible.kotlin.services
 
 import hu.simplexion.z2.sensible.kotlin.SENSIBLE_ANNOTATION
-import hu.simplexion.z2.sensible.kotlin.SensiblePluginRegistrar
+import hu.simplexion.z2.sensible.kotlin.fir.SensiblePluginRegistrar
 import hu.simplexion.z2.sensible.kotlin.ir.plugin.SensibleDumpPoint
 import hu.simplexion.z2.sensible.kotlin.ir.plugin.SensibleGenerationExtension
 import hu.simplexion.z2.sensible.kotlin.ir.plugin.SensibleOptions
