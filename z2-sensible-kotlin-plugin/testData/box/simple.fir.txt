@@ -1,0 +1,25 @@
+FILE: simple.kt
+    package foo.bar
+
+    @R|hu/simplexion/z2/sensible/runtime/Sensible|() public final class A : R|kotlin/Any| {
+        public constructor(i: R|kotlin/Int|): R|foo/bar/A| {
+            super<R|kotlin/Any|>()
+        }
+
+        public final val i: R|kotlin/Int| = R|<local>/i|
+            public get(): R|kotlin/Int|
+
+        public constructor(): R|foo/bar/A|
+
+    }
+    public final fun box(): R|kotlin/String| {
+        ^box when () {
+            ==(R|foo/bar/A|().R|foo/bar/A.i|, Int(0)) ->  {
+                String(OK)
+            }
+            else ->  {
+                String(Fail)
+            }
+        }
+
+    }

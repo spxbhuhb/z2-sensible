@@ -2,21 +2,20 @@
  * Copyright © 2020-2023, Simplexion, Hungary and contributors. Use of this source code is governed by the Apache 2.0 license.
  */
 plugins {
-    kotlin("multiplatform")
-    id("com.github.gmazzo.buildconfig")
+    kotlin("multiplatform") version "1.9.0-dev-4392"
     signing
     `maven-publish`
 }
 
-val String.propValue
-    get() = (System.getenv(this.toUpperCase().replace('.', '_')) ?: project.findProperty(this))?.toString() ?: ""
+repositories {
+    google()
+    mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/bootstrap")
+}
 
-val isPublishing = "z2.publish".propValue
-val publishSnapshotUrl = "z2.publish.snapshot.url".propValue
-val publishReleaseUrl = "z2.publish.release.url".propValue
-val publishUsername = "z2.publish.username".propValue
-val publishPassword = "z2.publish.password".propValue
-val isSnapshot = "SNAPSHOT" in project.version.toString()
+group = "hu.simplexion.z2"
+version = "0.1.0-SNAPSHOT"
+
 
 kotlin {
 
@@ -30,21 +29,19 @@ kotlin {
         binaries.library()
     }
 
-    sourceSets {
-        commonTest {
-            dependencies {
-                implementation(kotlin("test-common"))
-                implementation(kotlin("test-annotations-common"))
-                implementation(kotlin("test-junit"))
-            }
-        }
-    }
 }
 
-buildConfig {
-    packageName("hu.simplexion.z2.sensible.runtime")
-    buildConfigField("String", "PLUGIN_VERSION", "\"${project.version}\"")
-}
+// ----  Publishing ----
+
+val String.propValue
+    get() = (System.getenv(this.toUpperCase().replace('.', '_')) ?: project.findProperty(this))?.toString() ?: ""
+
+val isPublishing = "z2.publish".propValue
+val publishSnapshotUrl = "z2.publish.snapshot.url".propValue
+val publishReleaseUrl = "z2.publish.release.url".propValue
+val publishUsername = "z2.publish.username".propValue
+val publishPassword = "z2.publish.password".propValue
+val isSnapshot = "SNAPSHOT" in project.version.toString()
 
 val baseName = "z2-sensible-runtime"
 val pomName = "Z2 Sensible Runtime"
