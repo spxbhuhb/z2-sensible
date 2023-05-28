@@ -16,15 +16,6 @@
 
 package hu.simplexion.z2.sensible.gradle
 
-import hu.simplexion.z2.sensible.runtime.Plugin.GRADLE_EXTENSION_NAME
-import hu.simplexion.z2.sensible.runtime.Plugin.KOTLIN_COMPILER_PLUGIN_ARTIFACT_GROUP
-import hu.simplexion.z2.sensible.runtime.Plugin.KOTLIN_COMPILER_PLUGIN_ARTIFACT_NAME
-import hu.simplexion.z2.sensible.runtime.Plugin.KOTLIN_COMPILER_PLUGIN_ID
-import hu.simplexion.z2.sensible.runtime.Plugin.OPTION_NAME_ANNOTATION
-import hu.simplexion.z2.sensible.runtime.Plugin.OPTION_NAME_DUMP_POINT
-import hu.simplexion.z2.sensible.runtime.Plugin.OPTION_NAME_PLUGIN_LOG_DIR
-import hu.simplexion.z2.sensible.runtime.Plugin.OPTION_NAME_PRINT_DUMPS
-import hu.simplexion.z2.sensible.runtime.Plugin.PLUGIN_VERSION
 import org.gradle.api.Project
 import org.gradle.api.provider.Provider
 import org.jetbrains.kotlin.gradle.plugin.KotlinCompilation

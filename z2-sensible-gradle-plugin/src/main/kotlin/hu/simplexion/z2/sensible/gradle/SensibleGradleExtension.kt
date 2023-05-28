@@ -80,4 +80,4 @@ open class SensibleGradleExtension(objects: ObjectFactory) {
 
 @Suppress("unused")
 fun org.gradle.api.Project.z2sensible(configure: Action<SensibleGradleExtension>): Unit =
-    (this as org.gradle.api.plugins.ExtensionAware).extensions.configure("z2sensible", configure)
+    (this as org.gradle.api.plugins.ExtensionAware).extensions.configure("sensible", configure)

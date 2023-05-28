@@ -4,11 +4,7 @@
  */
 package hu.simplexion.z2.sensible.kotlin.ir.plugin
 
-import hu.simplexion.z2.sensible.kotlin.Plugin.OPTION_NAME_ANNOTATION
-import hu.simplexion.z2.sensible.kotlin.Plugin.OPTION_NAME_DUMP_POINT
-import hu.simplexion.z2.sensible.kotlin.Plugin.OPTION_NAME_GENERATORS
-import hu.simplexion.z2.sensible.kotlin.Plugin.OPTION_NAME_PLUGIN_LOG_DIR
-import hu.simplexion.z2.sensible.kotlin.Plugin.OPTION_NAME_PRINT_DUMPS
+import hu.simplexion.z2.sensible.kotlin.*
 import hu.simplexion.z2.sensible.kotlin.ir.generators.SensibleGenerator
 import org.jetbrains.kotlin.config.CompilerConfigurationKey
 

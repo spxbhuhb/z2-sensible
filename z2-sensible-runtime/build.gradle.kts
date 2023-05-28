@@ -16,7 +16,6 @@ repositories {
 group = "hu.simplexion.z2"
 version = "0.1.0-SNAPSHOT"
 
-
 kotlin {
 
     jvm {

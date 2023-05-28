@@ -1,6 +1,6 @@
 package hu.simplexion.z2.sensible.kotlin.services
 
-import hu.simplexion.z2.sensible.kotlin.Plugin
+import hu.simplexion.z2.sensible.kotlin.SENSIBLE_ANNOTATION
 import hu.simplexion.z2.sensible.kotlin.SensiblePluginRegistrar
 import hu.simplexion.z2.sensible.kotlin.ir.plugin.SensibleDumpPoint
 import hu.simplexion.z2.sensible.kotlin.ir.plugin.SensibleGenerationExtension
@@ -23,7 +23,7 @@ class ExtensionRegistrarConfigurator(testServices: TestServices) : EnvironmentCo
         IrGenerationExtension.registerExtension(
             SensibleGenerationExtension(
                 SensibleOptions(
-                    listOf(Plugin.SENSIBLE_ANNOTATION),
+                    listOf(SENSIBLE_ANNOTATION),
                     emptyList(),
                     SensibleDumpPoint.values().toList(),
                     printDumps = true,

@@ -17,6 +17,9 @@ repositories {
     maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/bootstrap")
 }
 
+group = "hu.simplexion.z2"
+version = "0.1.0-SNAPSHOT"
+
 sourceSets {
     main {
         java.setSrcDirs(listOf("src"))

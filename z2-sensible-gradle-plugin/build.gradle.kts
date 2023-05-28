@@ -2,28 +2,26 @@
  * Copyright © 2020-2023, Simplexion, Hungary and contributors. Use of this source code is governed by the Apache 2.0 license.
  */
 plugins {
-    id("com.gradle.plugin-publish")
-    kotlin("jvm")
+    id("com.gradle.plugin-publish") version "1.1.0"
+    kotlin("jvm") version "1.9.0-dev-4392"
     signing
     `maven-publish`
 }
-
-val String.propValue
-    get() = (System.getenv(this.toUpperCase().replace('.', '_')) ?: project.findProperty(this))?.toString() ?: ""
-
-val publishSnapshotUrl = "z2.publish.snapshot.url".propValue
-val publishReleaseUrl = "z2.publish.release.url".propValue
-val publishUsername = "z2.publish.username".propValue
-val publishPassword = "z2.publish.password".propValue
-val isSnapshot = "SNAPSHOT" in project.version.toString()
 
 kotlin {
     jvmToolchain(11)
 }
 
+repositories {
+    mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/bootstrap")
+}
+
+group = "hu.simplexion.z2"
+version = "0.1.0-SNAPSHOT"
+
 dependencies {
     implementation(kotlin("gradle-plugin-api"))
-    implementation(project(":z2-sensible-runtime"))
 }
 
 gradlePlugin {
@@ -39,6 +37,16 @@ gradlePlugin {
         }
     }
 }
+
+
+val String.propValue
+    get() = (System.getenv(this.toUpperCase().replace('.', '_')) ?: project.findProperty(this))?.toString() ?: ""
+
+val publishSnapshotUrl = "z2.publish.snapshot.url".propValue
+val publishReleaseUrl = "z2.publish.release.url".propValue
+val publishUsername = "z2.publish.username".propValue
+val publishPassword = "z2.publish.password".propValue
+val isSnapshot = "SNAPSHOT" in project.version.toString()
 
 signing {
     if (project.properties["signing.keyId"] == null) {
